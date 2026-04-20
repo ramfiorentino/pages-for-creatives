@@ -321,17 +321,19 @@
     text-transform:uppercase; color:var(--fg-muted);
     border:1px solid var(--border-ui); padding:3px 8px;
   }
-  html[data-theme="print"] .headshot-label { border-color:var(--border); }
+  html[data-theme="print"] .-label { border-color:var(--border); }
 
   /* corner mark — subtle decorative */
-  .headshot::before, .headshot::after {
+  .::before, .::after {
     content:''; position:absolute; width:12px; height:12px;
     border-color:var(--accent); border-style:solid;
   }
-  .headshot::before { top:8px; left:8px; border-width:1px 0 0 1px; }
-  .headshot::after  { bottom:8px; right:8px; border-width:0 1px 1px 0; }
+  .::before { top:8px; left:8px; border-width:1px 0 0 1px; }
+  .::after  { bottom:8px; right:8px; border-width:0 1px 1px 0; }
   html[data-theme="print"] .headshot::before,
   html[data-theme="print"] .headshot::after { border-color:var(--fg); }
+
+  .headshot-img { width:100%; max-width:220px; aspect-ratio:3/4; object-fit:cover; }
 
   /* ═══════════════════════════════════════════
      ABOUT
@@ -608,7 +610,7 @@
         <!-- HEADSHOT PLACEHOLDER -->
         <div class="headshot fu">
           <span class="headshot-initials">RF</span>
-          <span class="headshot-label" data-i18n="s6.photo">[ tu foto aquí ]</span>
+          <span class="headshot-label" data-i18n="s6.photo"><img src="working-portrait.png" class="headshot-img"></span>
         </div>
 
         <div class="about-bio fu">
