@@ -1,0 +1,17 @@
+@media (max-width: 860px) {
+  nav, footer { padding-left: 24px; padding-right: 24px; }
+  .wrap { padding: 0 24px; }
+  .hero-inner { padding: 80px 24px 64px; }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .del-grid, .why-grid { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 48px 1fr; }
+  footer { flex-direction: column; gap: 6px; text-align: center; }
+  .sw-fixed { bottom: 16px; right: 16px; }
+  .headshot { max-width: 160px; }
+}
+
+@media (max-width: 540px) {
+  .sw-btns { gap: 6px; }
+  .nav-right { gap: 6px; }
+  .nav-cta { padding: 7px 12px; }
+}

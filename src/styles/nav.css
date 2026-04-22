@@ -1,0 +1,38 @@
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 52px; padding: 0 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+nav.scrolled { background: var(--bg); border-color: var(--border-ui); }
+html[data-theme="print"] nav.scrolled { border-color: var(--border); }
+
+.nav-logo {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--fg); text-decoration: none;
+}
+html[data-theme="studio"] .nav-logo span { color: var(--accent); }
+
+.nav-right { display: flex; align-items: center; gap: 8px; }
+
+.lang-btn {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  background: transparent; border: 1px solid var(--border-ui); color: var(--fg-muted);
+  padding: 6px 12px; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+html[data-theme="print"] .lang-btn { border-color: var(--border); }
+.lang-btn:hover { border-color: var(--accent); color: var(--fg); }
+html[data-theme="print"] .lang-btn:hover { border-color: var(--fg); color: var(--fg); }
+
+.nav-cta {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer; background: transparent;
+  border: 1px solid var(--accent); color: var(--accent); padding: 7px 18px;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-cta:hover { background: var(--accent); color: var(--bg); }
+html[data-theme="print"] .nav-cta { border-color: var(--fg); color: var(--fg); }
+html[data-theme="print"] .nav-cta:hover { background: var(--accent); color: var(--fg); border-color: var(--accent); }
