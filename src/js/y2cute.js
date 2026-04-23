@@ -123,7 +123,7 @@ function _makeDraggable(el) {
   const onMouseMove  = e => move(e.clientX, e.clientY)
   const onMouseUp    = ()  => end()
   const onTouchStart = e => { e.preventDefault(); const t = e.touches[0]; start(t.clientX, t.clientY) }
-  const onTouchMove  = e => { e.preventDefault(); const t = e.touches[0]; move(t.clientX, t.clientY) }
+  const onTouchMove  = e => { if (!active) return; e.preventDefault(); const t = e.touches[0]; move(t.clientX, t.clientY) }
   const onTouchEnd   = ()  => end()
 
   el.addEventListener('mousedown',  onMouseDown)
