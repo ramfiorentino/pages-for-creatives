@@ -1,0 +1,368 @@
+/* ── Video background ── */
+#y2cute-video {
+  display: none;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+  pointer-events: none;
+}
+html[data-theme="y2cute"] #y2cute-video { display: block; }
+
+/* ── Cursor ── */
+html[data-theme="y2cute"],
+html[data-theme="y2cute"] * {
+  cursor: url('../assets/y2cute/cursor_noob.cur'), auto;
+}
+
+/* ── Transparent page — video shows through ── */
+html[data-theme="y2cute"] body { background: transparent; }
+
+/* ── Nav ── */
+html[data-theme="y2cute"] nav { background: transparent; border-color: transparent; }
+html[data-theme="y2cute"] nav.scrolled { background: rgba(245,243,250,0.92); border-color: var(--border-ui); backdrop-filter: blur(8px); }
+html[data-theme="y2cute"] .nav-logo { font-family: 'Bianzhidai', sans-serif; font-size: 13px; letter-spacing: 0.08em; }
+html[data-theme="y2cute"] .nav-cta  { font-family: 'Bianzhidai', sans-serif; font-size: 11px; border: 2px solid var(--accent); color: var(--accent); box-shadow: 0 0 0 2px var(--fg); border-radius: 6px; filter: url(#y2cute-wave); }
+html[data-theme="y2cute"] .nav-cta:hover { background: var(--accent); color: var(--bg); box-shadow: 0 0 0 2px var(--fg); transform: none; }
+html[data-theme="y2cute"] .lang-btn { font-family: 'Bianzhidai', sans-serif; font-size: 11px; }
+
+/* ── Hero ── */
+html[data-theme="y2cute"] h1.hed {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  max-width: 20ch;
+}
+html[data-theme="y2cute"] h1.hed em { font-style: normal; color: var(--accent); }
+
+html[data-theme="y2cute"] .hero-tag {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 12px;
+  color: var(--fg);
+  opacity: 1;
+  letter-spacing: 0.08em;
+  border: 2px solid var(--fg);
+  box-shadow: 0 0 0 3px var(--accent);
+  border-radius: 8px;
+  padding: 5px 14px;
+  display: inline-block;
+  margin-bottom: 24px;
+  filter: url(#y2cute-wave);
+}
+html[data-theme="y2cute"] .hero-dash { display: none; }
+html[data-theme="y2cute"] .hero-tag::before { content: '< '; }
+html[data-theme="y2cute"] .hero-tag::after  { content: ' >'; }
+
+html[data-theme="y2cute"] .hero-sub {
+  font-family: 'Velvelyne', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 52ch;
+}
+html[data-theme="y2cute"] .hero-sub strong { color: var(--fg); font-weight: 700; }
+
+html[data-theme="y2cute"] .hero-note {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+/* ── CTA button ── */
+html[data-theme="y2cute"] .btn {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  background: var(--accent);
+  color: #F5F3FA;
+  border: 2px solid var(--fg);
+  box-shadow: 0 0 0 3px var(--accent), 0 0 0 5px var(--fg);
+  border-radius: 8px;
+  padding: 14px 28px;
+  filter: url(#y2cute-wave);
+  transition: box-shadow 0.08s, filter 0.08s;
+}
+html[data-theme="y2cute"] .btn:hover {
+  opacity: 1;
+  transform: none;
+  box-shadow: 0 0 0 4px var(--accent), 0 0 0 7px var(--fg);
+}
+
+/* ── Eyebrow labels — < LABEL > ── */
+html[data-theme="y2cute"] .ey {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg);
+  opacity: 1;
+  display: inline-block;
+  border: 2px solid var(--fg);
+  box-shadow: 0 0 0 3px var(--accent);
+  border-radius: 8px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+  filter: url(#y2cute-wave);
+}
+html[data-theme="y2cute"] .ey::before { content: '< '; }
+html[data-theme="y2cute"] .ey::after  { content: ' >'; }
+
+/* ── Section headings — ■■ prefix ── */
+html[data-theme="y2cute"] .sh {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+html[data-theme="y2cute"] .sh::before { content: '■■ '; color: var(--accent); font-size: 0.55em; }
+
+/* ── Dividers ── */
+html[data-theme="y2cute"] .rule {
+  height: 0;
+  background: none;
+  border-top: 1px dotted var(--fg);
+  opacity: 0.25;
+}
+
+/* ── Arrow marker → ♥ ── */
+html[data-theme="y2cute"] .arr { display: none; }
+html[data-theme="y2cute"] .for-list li {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .for-list li::before {
+  content: '♥';
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 0.85rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   WINDOWS-STYLE CARDS
+   ::before  = title bar gradient
+   ::after   = window control buttons (− □ ×)
+   .del-n    = floated into the title bar as window title
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Shared window chrome ── */
+html[data-theme="y2cute"] .del-card,
+html[data-theme="y2cute"] .why-card,
+html[data-theme="y2cute"] .price-box {
+  position: relative;
+  overflow: hidden;
+  /* 3D raised border — light top/left, dark bottom/right */
+  border-top: 2px solid #C4B5FF;
+  border-left: 2px solid #C4B5FF;
+  border-right: 2px solid #3D3060;
+  border-bottom: 2px solid #3D3060;
+  box-shadow:
+    1px 1px 0 #fff,                      /* outer highlight */
+    inset 1px 1px 0 rgba(255,255,255,0.6); /* inner highlight */
+}
+
+/* Title bar */
+html[data-theme="y2cute"] .del-card::before,
+html[data-theme="y2cute"] .why-card::before,
+html[data-theme="y2cute"] .price-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 24px;
+  background: linear-gradient(90deg, #6B5CE7 0%, #9B8FFF 60%, #B8A8FF 100%);
+  pointer-events: none;
+}
+
+/* Window controls */
+html[data-theme="y2cute"] .del-card::after,
+html[data-theme="y2cute"] .why-card::after,
+html[data-theme="y2cute"] .price-box::after {
+  content: '− □ ×';
+  position: absolute;
+  top: 0; right: 6px;
+  height: 24px;
+  line-height: 24px;
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.9);
+  pointer-events: none;
+}
+
+/* ── What you get cards ── */
+html[data-theme="y2cute"] .del-grid {
+  background: transparent;
+  border: none;
+  gap: 10px;
+}
+html[data-theme="y2cute"] .del-card {
+  background: rgba(245,243,250,0.96);
+  padding: 38px 18px 22px;
+}
+html[data-theme="y2cute"] .del-card:hover { background: rgba(255,255,255,0.98); }
+
+/* del-n becomes the window title inside the title bar */
+html[data-theme="y2cute"] .del-n {
+  position: absolute;
+  top: 0; left: 10px;
+  height: 24px;
+  line-height: 24px;
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0;
+  z-index: 1;
+}
+html[data-theme="y2cute"] .del-title {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+html[data-theme="y2cute"] .del-desc {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+
+/* ── Steps ── */
+html[data-theme="y2cute"] .step { border-top-style: dotted; }
+html[data-theme="y2cute"] .step:last-child { border-bottom-style: dotted; }
+html[data-theme="y2cute"] .step-n {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 11px;
+  color: var(--accent);
+  opacity: 1;
+}
+html[data-theme="y2cute"] .step-h {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+html[data-theme="y2cute"] .step-p {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+
+/* ── Pricing ── */
+html[data-theme="y2cute"] .price-box {
+  background: rgba(245,243,250,0.96);
+  padding: 38px 36px 36px;
+}
+html[data-theme="y2cute"] .price-desc {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .price-from {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+html[data-theme="y2cute"] .price-num {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .price-note {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+html[data-theme="y2cute"] .includes li {
+  font-family: 'Velvelyne', sans-serif;
+}
+html[data-theme="y2cute"] .includes li::before { content: '♥'; color: var(--accent); font-size: 0.75rem; }
+
+/* ── Why not builders ── */
+html[data-theme="y2cute"] .why-grid {
+  background: transparent;
+  border: none;
+  gap: 10px;
+}
+html[data-theme="y2cute"] .why-card {
+  background: rgba(245,243,250,0.96);
+  padding: 38px 24px 24px;
+}
+html[data-theme="y2cute"] .why-icon {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 13px;
+  color: var(--accent);
+}
+html[data-theme="y2cute"] .why-h {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .why-p {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+
+/* ── About ── */
+html[data-theme="y2cute"] .headshot { border-color: var(--fg); box-shadow: 3px 3px 0 var(--fg); }
+html[data-theme="y2cute"] .headshot-initials { font-family: 'CirrusCumulus', sans-serif; font-size: 2.5rem; color: var(--accent); }
+html[data-theme="y2cute"] .about-bio {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .about-bio strong { font-weight: 700; }
+html[data-theme="y2cute"] .tag { border-radius: 0; border-color: var(--fg); }
+html[data-theme="y2cute"] .tag:hover { border-color: var(--accent); background: var(--accent); color: #F5F3FA; }
+html[data-theme="y2cute"] .tag-lbl {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--fg-dim);
+}
+
+/* ── FAQ ── */
+html[data-theme="y2cute"] .faq-item { border-top-style: dotted; }
+html[data-theme="y2cute"] .faq-item:last-child { border-bottom-style: dotted; }
+html[data-theme="y2cute"] .faq-q {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-weight: 400;
+}
+html[data-theme="y2cute"] .faq-tog {
+  font-size: 0;
+  flex-shrink: 0;
+}
+html[data-theme="y2cute"] .faq-tog::before {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 13px;
+  content: '[+]';
+  color: var(--accent);
+}
+html[data-theme="y2cute"] .faq-item.open .faq-tog::before { content: '[-]'; }
+html[data-theme="y2cute"] .faq-item.open .faq-tog { transform: none; }
+html[data-theme="y2cute"] .faq-a {
+  font-family: 'Velvelyne', sans-serif;
+  font-weight: 400;
+}
+
+/* ── Final CTA ── */
+html[data-theme="y2cute"] #final-cta h2 {
+  font-family: 'CirrusCumulus', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+html[data-theme="y2cute"] #final-cta h2 em { font-style: normal; color: var(--accent); }
+html[data-theme="y2cute"] .cta-note {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+/* ── Footer ── */
+html[data-theme="y2cute"] footer {
+  font-family: 'Bianzhidai', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  border-top-style: dotted;
+  color: var(--fg);
+}
