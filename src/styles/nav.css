@@ -6,7 +6,6 @@ nav {
   transition: background 0.3s, border-color 0.3s;
 }
 nav.scrolled { background: var(--bg); border-color: var(--border-ui); }
-html[data-theme="print"] nav.scrolled { border-color: var(--border); }
 
 .nav-logo {
   font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
@@ -23,9 +22,7 @@ html[data-theme="studio"] .nav-logo span { color: var(--accent); }
   transition: border-color 0.15s, color 0.15s;
   font-family: inherit;
 }
-html[data-theme="print"] .lang-btn { border-color: var(--border); }
 .lang-btn:hover { border-color: var(--accent); color: var(--fg); }
-html[data-theme="print"] .lang-btn:hover { border-color: var(--fg); color: var(--fg); }
 
 .nav-cta {
   font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
@@ -34,5 +31,3 @@ html[data-theme="print"] .lang-btn:hover { border-color: var(--fg); color: var(-
   transition: background 0.15s, color 0.15s;
 }
 .nav-cta:hover { background: var(--accent); color: var(--bg); }
-html[data-theme="print"] .nav-cta { border-color: var(--fg); color: var(--fg); }
-html[data-theme="print"] .nav-cta:hover { background: var(--accent); color: var(--fg); border-color: var(--accent); }

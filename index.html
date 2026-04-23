@@ -8,16 +8,18 @@
   <meta name="description" content="Creo sitios web de una sola página para artistas, tatuadores, DJs y creativos. Rápido, intencional y completamente tuyo."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;600;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
+
+<!-- THREE.JS INSTALLATION CANVAS -->
+<canvas id="installation-canvas"></canvas>
 
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Ram <span>Fiorentino</span></a>
   <div class="nav-right">
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
-    <a href="#final-cta" class="nav-cta" data-i18n="nav.cta">Reservar llamada</a>
+    <a href="https://cal.com/ram-fiorentino-they-them-40rew9/" class="nav-cta" data-i18n="nav.cta">Reservar llamada</a>
   </div>
 </nav>
 
@@ -43,17 +45,9 @@
     </div>
     <p class="hero-note fu" data-i18n="hero.note">Desde €120 · En línea en 3–5 días</p>
 
-    <div class="sw-hero fu">
-      <span class="sw-label" data-i18n="sw.prompt">→ Elige una estética:</span>
-      <div class="sw-btns">
-        <button class="sw-btn" data-t="studio" onclick="setTheme('studio')"><span class="sw-dot"></span>Studio</button>
-        <button class="sw-btn" data-t="signal" onclick="setTheme('signal')"><span class="sw-dot"></span>Signal</button>
-        <button class="sw-btn" data-t="print"  onclick="setTheme('print')"><span class="sw-dot"></span>Print</button>
-      </div>
-    </div>
-
   </div>
 </section>
+
 
 <div class="rule"></div>
 
@@ -280,9 +274,9 @@
 <div class="sw-fixed" id="sw-fixed">
   <span class="sw-fixed-lbl" data-i18n="sw.style">Estilo</span>
   <div class="sw-dots">
-    <div class="sw-pip" data-t="studio" onclick="setTheme('studio')" title="Studio"><div class="sw-pip-i"></div></div>
-    <div class="sw-pip" data-t="signal" onclick="setTheme('signal')" title="Signal"><div class="sw-pip-i"></div></div>
-    <div class="sw-pip" data-t="print"  onclick="setTheme('print')"  title="Print"><div class="sw-pip-i"></div></div>
+    <div class="sw-pip" data-t="studio"       onclick="setTheme('studio')"       title="Studio"><div class="sw-pip-i"></div></div>
+    <div class="sw-pip" data-t="y2cute"       onclick="setTheme('y2cute')"       title="Y2Cute"><div class="sw-pip-i"></div></div>
+    <div class="sw-pip" data-t="installation" onclick="setTheme('installation')" title="Installation"><div class="sw-pip-i"></div></div>
   </div>
 </div>
 

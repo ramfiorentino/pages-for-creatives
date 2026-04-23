@@ -11,8 +11,7 @@ body {
 }
 
 html[data-theme="studio"] body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-html[data-theme="signal"]  body { font-family: 'DM Mono', monospace; }
-html[data-theme="print"]   body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+html[data-theme="y2cute"]  body { font-family: 'Velvelyne', sans-serif; }
 
 .is-switching *,
 .is-switching *::before,
@@ -25,7 +24,6 @@ html[data-theme="print"]   body { font-family: 'Helvetica Neue', Helvetica, Aria
 section { padding: 88px 0; }
 
 .rule { height: 1px; background: var(--border-ui); max-width: 1040px; margin: 0 auto; }
-html[data-theme="print"] .rule { height: 2px; background: var(--border); }
 
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 
