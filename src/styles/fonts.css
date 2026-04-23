@@ -1,0 +1,71 @@
+/* ════════════════════════════════════════════════════════════
+   THEME FONTS
+   One @font-face block per font file.
+   Drop .woff2 files into src/fonts/<theme>/ and uncomment.
+   font-display: swap  → shows fallback immediately, swaps in when ready
+   font-display: optional → only uses custom font if loaded in <100ms
+                             (better for decorative fonts that aren't critical)
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Studio ──────────────────────────────────────────────── */
+
+/* @font-face {
+  font-family: 'StudioFont';
+  src: url('../fonts/studio/font-name-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* @font-face {
+  font-family: 'StudioFont';
+  src: url('../fonts/studio/font-name-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* ── Y2Cute ───────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Bianzhidai';
+  src: url('../fonts/y2cute/bianzhidai_noBG-Base.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'CirrusCumulus';
+  src: url('../fonts/y2cute/CirrusCumulus.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Velvelyne';
+  src: url('../fonts/y2cute/Velvelyne-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Velvelyne';
+  src: url('../fonts/y2cute/Velvelyne-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+
+/* ── Installation ─────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'LinealVF';
+  src: url('../fonts/installation/LinealVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}

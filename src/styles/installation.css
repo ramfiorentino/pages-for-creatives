@@ -1,0 +1,233 @@
+/* ── Canvas — z-index -2 so bg img can layer above it ── */
+#installation-canvas {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+}
+html[data-theme="installation"] #installation-canvas { display: block; }
+
+/* ── Scroll arrow ── */
+#install-scroll-arrow {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  animation: install-bounce 1.6s ease-in-out infinite;
+}
+html[data-theme="installation"] #install-scroll-arrow { display: block; }
+
+@keyframes install-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ── Background image — fades in as canvas fades out ── */
+#install-bg-img {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: auto;
+  object-fit: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+html[data-theme="installation"] #install-bg-img { display: block; }
+
+/* ── Typography — LinealVF for everything ── */
+html[data-theme="installation"] { font-family: 'LinealVF', sans-serif; }
+html[data-theme="installation"] .sw-btn,
+html[data-theme="installation"] .sw-fixed-lbl,
+html[data-theme="installation"] nav,
+html[data-theme="installation"] .btn { font-family: 'LinealVF', sans-serif; }
+
+/* ── Font sizes ── */
+html[data-theme="installation"] .nav-logo     { font-size: 14px; }
+html[data-theme="installation"] .nav-cta      { font-size: 13px; }
+html[data-theme="installation"] .lang-btn     { font-size: 13px; }
+html[data-theme="installation"] .sw-btn       { font-size: 13px; }
+html[data-theme="installation"] .sw-fixed-lbl { font-size: 12px; }
+
+/* ── Hero — fullscreen, only canvas + arrow visible ── */
+html[data-theme="installation"] #hero {
+  background: transparent;
+  border: none;
+  position: relative;
+  z-index: 1;
+  align-items: stretch;
+  height: 100vh;
+  padding-top: 0;
+}
+html[data-theme="installation"] .hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  max-width: none;
+  text-align: center;
+}
+
+/* Hide all hero text — only the bouncing arrow shows on load */
+html[data-theme="installation"] .hero-tag,
+html[data-theme="installation"] .hero-sub,
+html[data-theme="installation"] #hero .btn,
+html[data-theme="installation"] h1.hed,
+html[data-theme="installation"] .hero-note { display: none; }
+
+/* ── Nav ── */
+html[data-theme="installation"] nav { background: transparent; border-color: transparent; }
+html[data-theme="installation"] nav.scrolled { background: var(--bg); border-color: var(--border-ui); }
+
+/* ── Body bg — shows as canvas fades, gives the "fades to white" effect ── */
+html[data-theme="installation"] body { background: var(--bg); }
+html[data-theme="installation"] section,
+html[data-theme="installation"] #pricing { background: transparent; }
+
+/* ── CTA button ── */
+html[data-theme="installation"] .btn {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  font-size: 13px;
+  padding: 12px 32px;
+  margin-bottom: 80px;
+  transition: background 0.2s, color 0.2s;
+}
+html[data-theme="installation"] .btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Theme switcher ── */
+.sw-btn[data-t="installation"] {
+  border-color: #1A1A1A; color: #1A1A1A; background: #F7F7F5;
+  font-weight: 300; letter-spacing: 0.18em;
+}
+.sw-btn[data-t="installation"]:hover,
+html[data-theme="installation"] .sw-btn[data-t="installation"] { background: #1A1A1A; color: #F7F7F5; }
+.sw-btn[data-t="installation"] .sw-dot { background: #1A1A1A; }
+html[data-theme="installation"] .sw-btn[data-t="installation"] .sw-dot { background: #F7F7F5; }
+
+.sw-pip[data-t="installation"] { background: #F7F7F5; border-color: #1A1A1A; }
+.sw-pip[data-t="installation"] .sw-pip-i { background: #1A1A1A; }
+html[data-theme="installation"] .sw-pip[data-t="installation"] { background: #1A1A1A; }
+html[data-theme="installation"] .sw-pip[data-t="installation"] .sw-pip-i { background: #F7F7F5; }
+
+/* ── Uniform dark text — full opacity everywhere ── */
+html[data-theme="installation"] .ey,
+html[data-theme="installation"] .sh,
+html[data-theme="installation"] .arr,
+html[data-theme="installation"] .hero-sub,
+html[data-theme="installation"] .del-n,
+html[data-theme="installation"] .del-title,
+html[data-theme="installation"] .del-desc,
+html[data-theme="installation"] .step-n,
+html[data-theme="installation"] .step-h,
+html[data-theme="installation"] .step-p,
+html[data-theme="installation"] .price-desc,
+html[data-theme="installation"] .price-from,
+html[data-theme="installation"] .price-num,
+html[data-theme="installation"] .price-note,
+html[data-theme="installation"] .why-icon,
+html[data-theme="installation"] .why-h,
+html[data-theme="installation"] .why-p,
+html[data-theme="installation"] .about-bio,
+html[data-theme="installation"] .faq-q,
+html[data-theme="installation"] .faq-a,
+html[data-theme="installation"] .faq-tog,
+html[data-theme="installation"] .for-list li,
+html[data-theme="installation"] .includes li,
+html[data-theme="installation"] .includes li::before,
+html[data-theme="installation"] .headshot-initials,
+html[data-theme="installation"] .tag,
+html[data-theme="installation"] .tag-lbl,
+html[data-theme="installation"] footer { color: var(--fg); opacity: 1; }
+
+/* ── Section typography ── */
+html[data-theme="installation"] .sh {
+  font-family: 'LinealVF', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+html[data-theme="installation"] .ey { font-weight: 300; letter-spacing: 0.2em; }
+
+/* ── What you get ── */
+html[data-theme="installation"] .del-grid { background: transparent; border-color: transparent; }
+html[data-theme="installation"] .del-card { background: transparent; }
+html[data-theme="installation"] .del-card:hover { background: transparent; }
+html[data-theme="installation"] .del-n { font-weight: 300; }
+html[data-theme="installation"] .del-title { font-family: 'LinealVF', sans-serif; font-weight: 300; }
+html[data-theme="installation"] .del-desc { font-weight: 300; }
+
+/* ── How it works ── */
+html[data-theme="installation"] .step-n { font-weight: 300; }
+html[data-theme="installation"] .step-h { font-family: 'LinealVF', sans-serif; font-weight: 300; }
+html[data-theme="installation"] .step-p { font-weight: 300; }
+
+/* ── Pricing ── */
+html[data-theme="installation"] .price-box { background: transparent; border-color: var(--border-ui); }
+html[data-theme="installation"] .price-num {
+  font-family: 'LinealVF', sans-serif;
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 300;
+}
+html[data-theme="installation"] .includes li { font-weight: 300; }
+
+/* ── Why not builders ── */
+html[data-theme="installation"] .why-grid { background: transparent; border-color: transparent; }
+html[data-theme="installation"] .why-card { background: transparent; }
+html[data-theme="installation"] .why-h { font-family: 'LinealVF', sans-serif; font-weight: 300; }
+html[data-theme="installation"] .why-p { font-weight: 300; }
+
+/* ── About ── */
+html[data-theme="installation"] .about-bio {
+  font-weight: 300;
+  background: transparent;
+  padding: 20px;
+}
+html[data-theme="installation"] .about-bio strong { font-weight: 500; }
+html[data-theme="installation"] .headshot { border-color: var(--border-ui); }
+html[data-theme="installation"] .headshot-initials { font-family: 'LinealVF', sans-serif; font-weight: 300; }
+html[data-theme="installation"] #about .two-col > div:last-child {
+  background: transparent;
+  padding: 24px;
+}
+html[data-theme="installation"] .tag { border-radius: 0; font-weight: 300; letter-spacing: 0.14em; }
+html[data-theme="installation"] .tag-lbl { letter-spacing: 0.2em; font-weight: 300; }
+
+/* ── For you ── */
+html[data-theme="installation"] .for-list { background: transparent; padding: 0 20px; }
+
+/* ── FAQ ── */
+html[data-theme="installation"] .faq-item { background: transparent; padding: 0 20px; }
+html[data-theme="installation"] .faq-q { font-family: 'LinealVF', sans-serif; font-weight: 300; }
+html[data-theme="installation"] .faq-a { font-weight: 300; }
+
+/* ── Final CTA ── */
+html[data-theme="installation"] #final-cta h2 {
+  font-family: 'LinealVF', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+html[data-theme="installation"] #final-cta h2 em { font-style: italic; color: var(--fg); }
+
+/* ── Footer ── */
+html[data-theme="installation"] footer { background: transparent; color: var(--fg); }
