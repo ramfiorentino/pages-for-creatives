@@ -56,8 +56,10 @@ export function initInstallation() {
   buildLights(scene, RW, RH, RD)
   buildWallText(scene, RD, document.fonts.load('300 1em "LinealVF"'))
 
-  const mouse  = { x: 0, y: 0 }
-  const smooth = { x: 0, y: 0 }
+  const mouse        = { x: 0, y: 0 }
+  const smooth       = { x: 0, y: 0 }
+  const scrollTarget = { p: 0 }
+  const scrollSmooth = { p: 0 }
 
   function onMouseMove(e) {
     mouse.x = e.clientX / window.innerWidth  - 0.5
@@ -72,6 +74,7 @@ export function initInstallation() {
   // ── Scroll: fade canvas out, pause rAF when hidden, fade bg in ──
   function onScroll() {
     const p = Math.min(window.scrollY / window.innerHeight, 1)
+    scrollTarget.p = p
 
     canvas.style.opacity = String(1 - p)
 
@@ -121,11 +124,14 @@ export function initInstallation() {
     animationId = requestAnimationFrame(animate)
     smooth.x += (mouse.x - smooth.x) * 0.04
     smooth.y += (mouse.y - smooth.y) * 0.04
+    scrollSmooth.p += (scrollTarget.p - scrollSmooth.p) * 0.05
+
     camera.position.x = CAM.x + smooth.x * 0.8
-    camera.position.y = CAM.y - smooth.y * 0.45
+    camera.position.y = CAM.y - smooth.y * 0.45 - scrollSmooth.p * 5.0
+    camera.position.z = CAM.z + scrollSmooth.p * 2.5
     camera.lookAt(
       LOOK.x + smooth.x * 0.2,
-      LOOK.y - smooth.y * 0.1,
+      LOOK.y - smooth.y * 0.1 - scrollSmooth.p * 2.0,
       LOOK.z
     )
     renderer.render(scene, camera)
