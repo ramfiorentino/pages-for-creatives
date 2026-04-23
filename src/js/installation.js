@@ -5,7 +5,7 @@ import terrazzoRoughPng   from '../textures/installation/Terrazzo006_1K-JPG_Roug
 import plasterPng         from '../textures/installation/Plaster001_1K-JPG_Color.jpg'
 import plasterNormalPng   from '../textures/installation/Plaster001_1K-JPG_NormalGL.jpg'
 import plasterRoughPng    from '../textures/installation/Plaster001_1K-JPG_Roughness.jpg'
-import bgSrc              from '../assets/installation/installation-bg2.webm'
+import bgSrc              from '../assets/installation/installation-bg2.gif'
 
 let renderer    = null
 let animationId = null
@@ -69,11 +69,19 @@ export function initInstallation() {
     renderer.setSize(window.innerWidth, window.innerHeight)
   }
 
-  // ── Scroll: blur canvas out, fade bg image in ──────────────
+  // ── Scroll: fade canvas out, pause rAF when hidden, fade bg in ──
   function onScroll() {
     const p = Math.min(window.scrollY / window.innerHeight, 1)
 
     canvas.style.opacity = String(1 - p)
+
+    // pause Three.js render when canvas is fully off-screen
+    if (p >= 0.99 && animationId) {
+      cancelAnimationFrame(animationId)
+      animationId = null
+    } else if (p < 0.99 && !animationId) {
+      animate()
+    }
 
     if (_arrow) _arrow.style.opacity = String(Math.max(0, 1 - p * 5))
 
@@ -92,17 +100,13 @@ export function initInstallation() {
   </svg>`
   document.body.appendChild(_arrow)
 
-  // ── Background video ───────────────────────────────────────
-  _bgEl = document.createElement('video')
-  _bgEl.id         = 'install-bg-img'
-  _bgEl.src        = bgSrc
-  _bgEl.autoplay   = true
-  _bgEl.loop       = true
-  _bgEl.muted      = true
-  _bgEl.playsInline = true
+  // ── Background GIF ─────────────────────────────────────────
+  _bgEl = document.createElement('img')
+  _bgEl.id  = 'install-bg-img'
+  _bgEl.src = bgSrc
+  _bgEl.alt = ''
   _bgEl.style.opacity = '0'
   document.body.appendChild(_bgEl)
-  _bgEl.play().catch(() => {})
 
   window.addEventListener('mousemove', onMouseMove)
   window.addEventListener('resize',    onResize)
