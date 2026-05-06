@@ -38,6 +38,7 @@ export default {
   's4.h':    'One price.<br>No surprises.',
   's4.desc': "You pay once. No monthly platform fees, no subscription you forget to cancel. Squarespace costs €156–276/year — plus 10+ hours of your time. This costs less over year one and takes zero hours of yours.",
   's4.from': 'Starting from',
+  's4.promo': 'Launch price · first 20 sites',
   's4.note': 'One payment. No subscriptions.',
   's4.i1':   'Custom one-page design',
   's4.i2':   'Domain setup &amp; deployment',

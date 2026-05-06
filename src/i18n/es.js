@@ -38,6 +38,7 @@ export default {
   's4.h':    'Un precio.<br>Sin sorpresas.',
   's4.desc': 'Pagas una vez. Sin cuotas mensuales, sin suscripción que se te olvida cancelar. Squarespace cuesta €156–276 al año — más las 10+ horas para armarlo. Esto cuesta menos en el primer año y toma cero horas tuyas.',
   's4.from': 'Desde',
+  's4.promo': 'Precio de lanzamiento · primeros 20 sitios',
   's4.note': 'Un solo pago. Sin suscripciones.',
   's4.i1':   'Diseño de página personalizada',
   's4.i2':   'Configuración de dominio y despliegue',

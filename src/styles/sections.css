@@ -32,9 +32,11 @@ html[data-theme="y2cute"] .step-p { font-size: 0.78rem; }
 .price-desc { margin-top: 20px; font-size: 0.88rem; color: var(--fg-dim); line-height: 1.8; max-width: 40ch; }
 .price-box { border: 1px solid var(--border); padding: 40px 36px; background: var(--bg); }
 .price-from { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 6px; }
-.price-num { font-weight: 700; color: var(--fg); line-height: 1; margin-bottom: 6px; }
+.price-num { font-weight: 700; color: var(--fg); line-height: 1; margin-bottom: 4px; display: flex; align-items: baseline; gap: 0.3em; flex-wrap: wrap; }
 html[data-theme="studio"] .price-num { font-size: clamp(4rem,8vw,6rem); }
 html[data-theme="y2cute"]  .price-num { font-size: clamp(2.5rem,5vw,4rem); }
+.price-original { text-decoration: line-through; color: var(--fg-muted); font-size: 0.45em; font-weight: 600; }
+.price-promo { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
 .price-note { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-muted); margin-bottom: 28px; }
 .includes { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 28px; }
 .includes li { color: var(--fg); display: flex; align-items: center; gap: 12px; }
