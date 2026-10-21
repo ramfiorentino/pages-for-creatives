@@ -3,7 +3,7 @@ import { copyFileSync } from 'fs'
 
 export default defineConfig({
   root: '.',
-  base: '/pages-for-creatives/',
+  base: '/',
   appType: 'spa',
   plugins: [{
     name: 'copy-404',

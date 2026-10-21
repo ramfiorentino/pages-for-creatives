@@ -1,0 +1,80 @@
+/* Sections and lines an offer has no text for are hidden by render.js */
+[hidden] { display: none !important; }
+
+/* ── Offers menu (nav) ── */
+.offers-nav { position: relative; }
+.offers-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 210;
+  min-width: 240px; background: var(--bg); border: 1px solid var(--border-ui);
+}
+.offers-menu ul { list-style: none; }
+.offers-menu a {
+  display: block; padding: 12px 18px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-dim); text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+.offers-menu li + li a { border-top: 1px solid var(--border-ui); }
+.offers-menu a:hover, .offers-menu a:focus-visible { color: var(--fg); background: var(--bg2); }
+.offers-menu a[aria-current="page"] { color: var(--accent); }
+.offers-menu a[aria-current="page"]::before { content: '→ '; }
+html[data-theme="y2cute"] .offers-menu { border: 2px solid var(--fg); border-radius: 8px; overflow: hidden; }
+html[data-theme="y2cute"] .offers-menu a { font-family: 'Bianzhidai', sans-serif; font-size: 12px; letter-spacing: 0.06em; }
+html[data-theme="installation"] .offers-menu a { font-size: 13px; }
+
+/* ── Overview: list of offers ── */
+.offer-list { list-style: none; margin-top: 40px; }
+.offer-row { border-top: 1px solid var(--border-ui); }
+.offer-row:last-child { border-bottom: 1px solid var(--border-ui); }
+.offer-row a {
+  display: grid; grid-template-columns: 64px 1fr auto auto; gap: 20px; align-items: baseline;
+  padding: 28px 0; color: inherit; text-decoration: none;
+}
+.offer-n { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); }
+.offer-body { display: flex; flex-direction: column; gap: 6px; }
+.offer-name { font-size: 1.15rem; font-weight: 700; color: var(--fg); line-height: 1.2; }
+.offer-for { color: var(--fg-dim); line-height: 1.6; max-width: 52ch; }
+.offer-price, .offer-go { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+.offer-price { color: var(--fg-muted); }
+.offer-go { color: var(--accent); transition: transform 0.15s; }
+.offer-row a:hover .offer-go { transform: translateX(4px); }
+.offer-row a:hover .offer-name { color: var(--accent); }
+html[data-theme="y2cute"] .offer-name { font-size: 0.95rem; font-weight: 500; }
+html[data-theme="y2cute"] .offer-for { font-size: 0.8rem; }
+
+/* ── Timeline / not included ── */
+.detail-p { margin-top: 20px; color: var(--fg-dim); line-height: 1.8; max-width: 44ch; }
+.detail-p a { color: var(--accent); }
+html[data-theme="y2cute"] .detail-p { font-size: 0.82rem; }
+
+/* ── Pricing unit ("per month") ── */
+.price-unit { font-size: 0.2em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
+
+@media (max-width: 860px) {
+  .offer-row a { grid-template-columns: 40px 1fr; row-gap: 10px; }
+  .offer-price, .offer-go { grid-column: 2; }
+}
+
+@media (max-width: 540px) {
+  nav { padding-left: 16px; padding-right: 16px; }
+  .nav-logo, .nav-right > * { white-space: nowrap; }
+  .nav-logo span { display: none; }
+  .nav-right .lang-btn { padding: 6px 8px; }
+  .nav-right .nav-cta { padding: 7px 10px; }
+  .offers-nav { position: static; }
+  .offers-menu { left: 12px; right: 12px; min-width: 0; }
+  /* Longer button text ("Reservar una llamada de presentación") */
+  .btn { font-size: 14px; letter-spacing: 0.08em; padding-left: 20px; padding-right: 20px; }
+  .price-box { padding: 32px 20px; }
+}
+
+@media (max-width: 400px) {
+  html[data-theme="y2cute"] .nav-right .lang-btn,
+  html[data-theme="y2cute"] .nav-right .nav-cta { font-size: 9px; letter-spacing: 0.04em; }
+  html[data-theme="y2cute"] .nav-right { gap: 5px; }
+}
+
+@media (max-width: 540px) {
+  html[data-theme="y2cute"] .btn { font-size: 14px; padding-left: 18px; padding-right: 18px; }
+  html[data-theme="y2cute"] .price-box { padding-left: 20px; padding-right: 20px; }
+}

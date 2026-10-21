@@ -1,0 +1,17 @@
+export default {
+  'menu.btn':  'Servicios',
+  'menu.all':  'Todos los servicios',
+  'offers.cta': 'Ver servicio',
+  'nav.cta':   'Reservar llamada',
+  'cta.btn':   'Reservar una llamada',
+  'cta.h':     '¿Lista para dejar de <em>postergarlo?</em>',
+  'cta.note':  'O escríbeme directo → ramonx.nwn@gmail.com',
+  'sw.prompt': '→ Elige una estética:',
+  'sw.style':  'Estilo',
+  's6.h':    'Soy Ram.',
+  's6.tl1':  'Stack que uso',
+  's6.tl3':  'Basada en',
+  'tag.remote': 'Remoto EU &amp; Global',
+  's7.ey':   'Preguntas frecuentes',
+  's7.h':    'Las preguntas que todos hacen.',
+}

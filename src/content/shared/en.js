@@ -1,0 +1,17 @@
+export default {
+  'menu.btn':  'Offers',
+  'menu.all':  'All offers',
+  'offers.cta': 'See the offer',
+  'nav.cta':   'Book a call',
+  'cta.btn':   'Book an intro call',
+  'cta.h':     'Ready to stop <em>putting it off?</em>',
+  'cta.note':  'Or email directly → ramonx.nwn@gmail.com',
+  'sw.prompt': '→ See it in a different aesthetic:',
+  'sw.style':  'Style',
+  's6.h':    "I'm Ram.",
+  's6.tl1':  'Stack I use',
+  's6.tl3':  'Based in',
+  'tag.remote': 'Remote EU &amp; Global',
+  's7.ey':   'FAQ',
+  's7.h':    'The questions everyone asks.',
+}

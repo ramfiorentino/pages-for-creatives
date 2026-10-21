@@ -6,6 +6,12 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️‍🔥</text></svg>">
   <title>Ram Fiorentino — Sitios web para creativos</title>
   <meta name="description" content="Creo sitios web de una sola página para artistas, tatuadores, DJs y creativos. Rápido, intencional y completamente tuyo."/>
+  <link rel="canonical" href="https://offers.ramfiorentino.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Ram Fiorentino"/>
+  <meta property="og:title" content="Ram Fiorentino — Sitios web para creativos"/>
+  <meta property="og:description" content="Creo sitios web de una sola página para artistas, tatuadores, DJs y creativos. Rápido, intencional y completamente tuyo."/>
+  <meta property="og:url" content="https://offers.ramfiorentino.com/"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 </head>
@@ -16,8 +22,14 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Ram <span>Fiorentino</span></a>
+  <a href="/" class="nav-logo">Ram <span>Fiorentino</span></a>
   <div class="nav-right">
+    <div class="offers-nav">
+      <button class="lang-btn" id="offers-btn" aria-expanded="false" aria-controls="offers-menu" data-i18n="menu.btn">Servicios</button>
+      <div class="offers-menu" id="offers-menu" hidden>
+        <ul id="offers-menu-list"></ul>
+      </div>
+    </div>
     <button class="lang-btn" id="lang-btn" onclick="toggleLang()">EN</button>
     <a href="https://cal.com/ram-fiorentino-they-them-40rew9/" class="nav-cta" data-i18n="nav.cta">Reservar llamada</a>
   </div>
@@ -49,10 +61,20 @@
 </section>
 
 
-<div class="rule"></div>
+<div class="rule" data-requires="offers.h"></div>
+
+<!-- OFFERS (overview page only) -->
+<section id="offers" data-requires="offers.h">
+  <div class="wrap">
+    <h2 class="sh fu" data-i18n="offers.h"></h2>
+    <ul class="offer-list fu" id="offer-list"></ul>
+  </div>
+</section>
+
+<div class="rule" data-requires="s1.h"></div>
 
 <!-- WHO THIS IS FOR -->
-<section id="for-you">
+<section id="for-you" data-requires="s1.h">
   <div class="wrap">
     <div class="two-col">
       <div>
@@ -68,10 +90,10 @@
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="rule" data-requires="s2.h"></div>
 
 <!-- WHAT YOU GET -->
-<section id="what-you-get">
+<section id="what-you-get" data-requires="s2.h">
   <div class="wrap">
     <span class="ey fu" data-i18n="s2.ey">Qué recibes</span>
     <h2 class="sh fu" data-i18n="s2.h">Tres cosas. Nada más.</h2>
@@ -95,10 +117,47 @@
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="rule" data-requires="needs.h"></div>
+
+<!-- WHAT I NEED FROM YOU -->
+<section id="needs" data-requires="needs.h">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <h2 class="sh fu" data-i18n="needs.h"></h2>
+      </div>
+      <ul class="for-list">
+        <li class="fu" data-requires="needs.li1"><span class="arr">→</span><span data-i18n="needs.li1"></span></li>
+        <li class="fu" data-requires="needs.li2"><span class="arr">→</span><span data-i18n="needs.li2"></span></li>
+        <li class="fu" data-requires="needs.li3"><span class="arr">→</span><span data-i18n="needs.li3"></span></li>
+        <li class="fu" data-requires="needs.li4"><span class="arr">→</span><span data-i18n="needs.li4"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="rule" data-requires="time.h"></div>
+
+<!-- TIMELINE + WHAT'S NOT INCLUDED -->
+<section id="details" data-requires="time.h">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <h2 class="sh fu" data-i18n="time.h"></h2>
+        <p class="detail-p fu" data-i18n="time.p"></p>
+      </div>
+      <div data-requires="excl.h">
+        <h2 class="sh fu" data-i18n="excl.h"></h2>
+        <p class="detail-p fu" data-i18n="excl.p"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule" data-requires="s3.h"></div>
 
 <!-- HOW IT WORKS -->
-<section id="how-it-works">
+<section id="how-it-works" data-requires="s3.h">
   <div class="wrap">
     <span class="ey fu" data-i18n="s3.ey">Cómo funciona</span>
     <h2 class="sh fu" data-i18n="s3.h">Tres pasos, y ya está.</h2>
@@ -129,7 +188,7 @@
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
+<section id="pricing" data-requires="s4.h">
   <div class="wrap">
     <div class="two-col">
       <div>
@@ -140,12 +199,13 @@
       <div class="price-box fu">
         <p class="price-from" data-i18n="s4.from">Desde</p>
         <div class="price-num">
-          <span class="price-original">€250</span>
-          €150
+          <span class="price-original" data-i18n="price.original">€250</span>
+          <span data-i18n="price.num">€150</span>
+          <span class="price-unit" data-i18n="price.unit"></span>
         </div>
         <p class="price-promo" data-i18n="s4.promo">Precio de lanzamiento · primeros 20 sitios</p>
         <p class="price-note" data-i18n="s4.note">Un solo pago. Sin suscripciones.</p>
-        <ul class="includes">
+        <ul class="includes" data-requires="s4.i1">
           <li data-i18n="s4.i1">Diseño de página personalizada</li>
           <li data-i18n="s4.i2">Configuración de dominio y despliegue</li>
           <li data-i18n="s4.i3">Perfecta en móvil y carga rápida</li>
@@ -159,10 +219,10 @@
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="rule" data-requires="s5.h"></div>
 
 <!-- WHY NOT BUILDERS -->
-<section id="why-me">
+<section id="why-me" data-requires="s5.h">
   <div class="wrap">
     <span class="ey fu" data-i18n="s5.ey">¿Por qué no usar IA o Wix?</span>
     <h2 class="sh fu" data-i18n="s5.h">La IA genera una página. Yo la mantengo viva, visible y funcionando.</h2>
@@ -186,17 +246,17 @@
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="rule" data-requires="s6.b1"></div>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" data-requires="s6.b1">
   <div class="wrap">
     <div class="two-col">
       <div>
         <span class="ey fu" data-i18n="s6.ey">Sobre mí</span>
         <h2 class="sh fu" data-i18n="s6.h">Soy Ram.</h2>
 
-        <img src="working-portrait.png" class="headshot-img" alt="Ram Fiorentino">
+        <img src="/working-portrait.png" class="headshot-img" alt="Ram Fiorentino">
 
         <div class="about-bio fu">
           <p data-i18n="s6.b1">Soy <strong>ingeniera frontend con base en Barcelona</strong>, con cinco años construyendo productos web para clientes del sector creativo y del e-commerce en Argentina, el Reino Unido y España.</p>
@@ -211,7 +271,7 @@
           <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">GSAP</span><span class="tag">Sanity CMS</span><span class="tag">Shopify</span><span class="tag">Vercel</span>
         </div>
         <span class="tag-lbl" data-i18n="s6.tl2">He trabajado con</span>
-        <div class="tags">
+        <div class="tags" data-requires="s6.tl2">
           <span class="tag" data-i18n="tag.tattoo">Tatuadores</span>
           <span class="tag" data-i18n="tag.fashion">Moda</span>
           <span class="tag" data-i18n="tag.dj">DJs</span>
@@ -228,10 +288,10 @@
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="rule" data-requires="faq.q1"></div>
 
 <!-- FAQ -->
-<section id="faq">
+<section id="faq" data-requires="faq.q1">
   <div class="wrap">
     <span class="ey fu" data-i18n="s7.ey">Preguntas frecuentes</span>
     <h2 class="sh fu" data-i18n="s7.h">Las preguntas que todos hacen.</h2>

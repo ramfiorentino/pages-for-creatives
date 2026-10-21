@@ -1,17 +1,13 @@
-import es from '../i18n/es.js'
-import en from '../i18n/en.js'
+import { DEFAULT_LANG } from '../content/index.js'
+import { render } from './render.js'
 
-const T = { es, en }
-export let currentLang = 'es'
+export let currentLang = DEFAULT_LANG
+let currentOffer = 'overview'
 
-export function applyLang(l) {
+export function applyLang(l, offer = currentOffer) {
   currentLang = l
-  document.documentElement.setAttribute('lang', l)
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n')
-    if (T[l][k] !== undefined) el.innerHTML = T[l][k]
-  })
-  document.getElementById('lang-btn').textContent = l === 'es' ? 'EN' : 'ES'
+  currentOffer = offer
+  render(document, offer, l)
   document.querySelectorAll('a[href^="mailto"]').forEach(a => {
     a.href = l === 'es'
       ? 'mailto:ramonx.nwn@gmail.com?subject=Llamada intro — sitio web para creativos'
