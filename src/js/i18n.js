@@ -10,8 +10,8 @@ export function applyLang(l, offer = currentOffer) {
   render(document, offer, l)
   document.querySelectorAll('a[href^="mailto"]').forEach(a => {
     a.href = l === 'es'
-      ? 'mailto:ramonx.nwn@gmail.com?subject=Llamada intro — sitio web para creativos'
-      : 'mailto:ramonx.nwn@gmail.com?subject=Intro call — website for creatives'
+      ? 'mailto:ramfiorentino@proton.me?subject=Llamada intro — sitio web para creativos'
+      : 'mailto:ramfiorentino@proton.me?subject=Intro call — website for creatives'
   })
 }
 

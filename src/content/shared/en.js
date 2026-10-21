@@ -5,7 +5,7 @@ export default {
   'nav.cta':   'Book a call',
   'cta.btn':   'Book an intro call',
   'cta.h':     'Ready to stop <em>putting it off?</em>',
-  'cta.note':  'Or email directly → ramonx.nwn@gmail.com',
+  'cta.note':  'Or email directly → ramfiorentino@proton.me',
   'sw.prompt': '→ See it in a different aesthetic:',
   'sw.style':  'Style',
   's6.h':    "I'm Ram.",

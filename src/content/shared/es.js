@@ -5,7 +5,7 @@ export default {
   'nav.cta':   'Reservar llamada',
   'cta.btn':   'Reservar una llamada',
   'cta.h':     '¿Lista para dejar de <em>postergarlo?</em>',
-  'cta.note':  'O escríbeme directo → ramonx.nwn@gmail.com',
+  'cta.note':  'O escríbeme directo → ramfiorentino@proton.me',
   'sw.prompt': '→ Elige una estética:',
   'sw.style':  'Estilo',
   's6.h':    'Soy Ram.',
