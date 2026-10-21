@@ -6,7 +6,6 @@ import '../styles/hero.css'
 import '../styles/components.css'
 import '../styles/sections.css'
 import '../styles/mobile.css'
-import '../styles/installation.css'
 import '../styles/y2cute.css'
 import '../styles/offers.css'
 
@@ -17,7 +16,6 @@ import { initNav } from './nav.js'
 import { THEMES, parsePath, pathFor } from './route.js'
 import { initAnimations } from './animations.js'
 import { initFaq } from './faq.js'
-import { initInstallation, destroyInstallation } from './installation.js'
 import { initY2cute, destroyY2cute } from './y2cute.js'
 
 const { offer } = parsePath(window.location.pathname)
@@ -26,8 +24,6 @@ const { offer } = parsePath(window.location.pathname)
 function _applyTheme(t) {
   const prev = document.documentElement.getAttribute('data-theme')
   _setTheme(t)
-  if (prev === 'installation' && t !== 'installation') destroyInstallation()
-  if (t === 'installation' && prev !== 'installation') initInstallation()
   if (prev === 'y2cute' && t !== 'y2cute') destroyY2cute()
   if (t === 'y2cute' && prev !== 'y2cute') initY2cute()
 }
@@ -70,8 +66,7 @@ try {
 } catch (e) {}
 applyLang(bootLang, offer)
 
-// Boot canvas scenes if active on load
-if (bootTheme === 'installation') initInstallation()
+// Boot the y2cute scene if active on load
 if (bootTheme === 'y2cute') initY2cute()
 
 initNav()

@@ -23,7 +23,7 @@ for (const offer of OFFERS) {
   write(pathFor(offer), offer)
   for (const theme of THEMES) write(pathFor(offer, theme), offer, theme)
 }
-// Old single-offer links (/studio, /y2cute, /installation) keep working.
+// Old single-offer links (/studio, /y2cute) keep working.
 for (const theme of THEMES) write(`/${theme}`, 'landing-page', theme)
 
 console.log(`prerendered ${1 + OFFERS.length * (THEMES.length + 1) + THEMES.length} pages`)

@@ -19,15 +19,3 @@ html[data-theme="y2cute"] {
   --border: #9B8FFF;
   --border-ui: #D8D4F0;
 }
-
-
-html[data-theme="installation"] {
-  --bg: #F7F7F5;
-  --bg2: #EFEFED;
-  --fg: #1A1A1A;
-  --fg-dim: #555555;
-  --fg-muted: #999999;
-  --accent: #1A1A1A;
-  --border: #1A1A1A;
-  --border-ui: #DEDEDE;
-}

@@ -20,7 +20,6 @@
 .offers-menu a[aria-current="page"]::before { content: '→ '; }
 html[data-theme="y2cute"] .offers-menu { border: 2px solid var(--fg); border-radius: 8px; overflow: hidden; }
 html[data-theme="y2cute"] .offers-menu a { font-family: 'Bianzhidai', sans-serif; font-size: 12px; letter-spacing: 0.06em; }
-html[data-theme="installation"] .offers-menu a { font-size: 13px; }
 
 /* ── Overview: list of offers ── */
 .offer-list { list-style: none; margin-top: 40px; }

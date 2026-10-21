@@ -1,6 +1,6 @@
 import { OFFERS } from '../content/index.js'
 
-export const THEMES = ['studio', 'y2cute', 'installation']
+export const THEMES = ['studio', 'y2cute']
 
 // URLs: "/" is the overview, "/<offer>/<theme>" an offer page.
 // "/<theme>" is the old single-offer URL and maps to the landing page offer.

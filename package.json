@@ -10,8 +10,5 @@
   "devDependencies": {
     "linkedom": "^0.18.13",
     "vite": "^5.0.0"
-  },
-  "dependencies": {
-    "three": "^0.184.0"
   }
 }
